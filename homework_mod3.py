@@ -1,8 +1,11 @@
 from datetime import datetime
 
-def get_days_from_today(date) -> int:
+def get_days_from_today(date: str) -> int:
     """
     Function returns an integer indicating the number of days from the given date to the current one
+
+    Input:
+    :param date: string     Date in 'YYYY-MM-DD' format.
 
     Output:
     :return: integer
@@ -20,5 +23,6 @@ def get_days_from_today(date) -> int:
     days_from_today = (date - today).days  # Difference between dates
     return days_from_today
 
-result: int = get_days_from_today('2025-02-10')
-print(f"{result} days between today's date and the given date.")
+# Example of use
+# result: int = get_days_from_today("2021-10-09")
+# print(f"{result} days between today's date and the given date.")

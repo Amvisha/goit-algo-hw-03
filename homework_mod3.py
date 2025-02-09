@@ -11,18 +11,19 @@ def get_days_from_today(date: str) -> int:
     :return: integer
              A negative number if the specified date is in the future.
     """
-    while True:
-        try:
-            date = datetime.strptime(date, '%Y-%m-%d').date()  # Converting a date string to a datetime object
-            break
+    try:
+        date = datetime.strptime(date, '%Y-%m-%d').date()  # Converting a date string to a datetime object
+        today = datetime.today().date()  # Current date
+        days_from_today = (date - today).days  # Difference between dates
+        return days_from_today
 
-        except Exception as e: # Exception handling for incorrect date format
-            print(e)
+    except ValueError: # Exception handling for incorrect date format
+        print("Invalid date format. Use 'YYYY-MM-DD' format.")
+        return None
 
-    today = datetime.today().date()  # Current date
-    days_from_today = (date - today).days  # Difference between dates
-    return days_from_today
+
 
 # Example of use
-# result: int = get_days_from_today("2021-10-09")
-# print(f"{result} days between today's date and the given date.")
+# date = "2021-10-09"
+# result: int = get_days_from_today(date)
+# print(f"Number of days from {date} to today: {result}.")

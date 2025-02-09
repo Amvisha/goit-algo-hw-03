@@ -22,8 +22,9 @@ def get_days_from_today(date: str) -> int:
         return None
 
 
-
+"""
 # Example of use
-# date = "2021-10-09"
-# result: int = get_days_from_today(date)
-# print(f"Number of days from {date} to today: {result}.")
+date = "2021-10-09"
+result: int = get_days_from_today(date)
+print(f"Number of days from {date} to today: {result}.")
+"""

@@ -9,6 +9,7 @@ def get_days_from_today(date: str) -> int:
 
     Output:
     :return: integer
+             A negative number if the specified date is in the future.
     """
     try:
         date = datetime.strptime(date, '%Y-%m-%d').date()  # Converting a date string to a datetime object
